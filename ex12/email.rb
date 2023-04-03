@@ -2,6 +2,7 @@ require 'date'
 require 'net/smtp'
 require 'io/console'
 
+puts "Loading Norminet image..."
 filename = "norminet.jpg"
 file_content = File.read(filename)
 encoded_content = [file_content].pack("m")
@@ -10,7 +11,7 @@ marker = "UNIQUEMARKER"
 origin = "Casper Schuijt"
 
 email = "casperschuijt@gmail.com"
-password = STDIN.getpass("Password: ")
+password = STDIN.getpass("Email password: ")
 
 Net::SMTP.start('smtp.gmail.com', 587, 'gmail.com', user: email, secret: password, authtype: :login) do |smtp|
   puts "Login successful!"
