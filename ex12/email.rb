@@ -2,18 +2,14 @@ require 'date'
 require 'net/smtp'
 require 'io/console'
 
-# temporary app password: esvmcewuihiiknmb
-
 filename = "norminet.jpg"
 file_content = File.read(filename)
 encoded_content = [file_content].pack("m")
 marker = "UNIQUEMARKER"
 
-print "Your name: "
-origin = gets(chomp: true)
+origin = "Casper Schuijt"
 
-print "Email to log in with: "
-email = gets(chomp: true)
+email = "casperschuijt@gmail.com"
 password = STDIN.getpass("Password: ")
 
 Net::SMTP.start('smtp.gmail.com', 587, 'gmail.com', user: email, secret: password, authtype: :login) do |smtp|

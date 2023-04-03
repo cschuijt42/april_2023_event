@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    net-protocol (0.2.1)
+      timeout
+    net-smtp (0.3.3)
+      net-protocol
+    timeout (0.3.2)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  net-smtp
+
+BUNDLED WITH
+   2.4.6
